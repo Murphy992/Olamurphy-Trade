@@ -1,0 +1,7 @@
+</p><div className="planrow"><b>Starter</b><span>Learn diversification</span></div><div className="planrow"><b>Balanced</b><span>Compare asset allocation</span></div><div className="planrow"><b>Crypto-focused</b><span>Study volatility and risk</span></div></div></div>
+      <div className="card history"><h2>My recent activity</h2>{activity.length===0?<p className="muted">No activity recorded yet.</p>:activity.map(item=><div className="activity" key={item.id}><span>{item.activity_type} {item.asset||""}</span><b>${Number(item.amount).toFixed(2)}</b><small>{new Date(item.created_at).toLocaleString()}</small></div>)}</div>
+      {profile?.role==="admin" && <div className="card admin"><div className="adminhead"><div><p className="eyebrow">RESTRICTED AREA</p><h2>Administrator · Registered users</h2></div><span className="tag">{users.length} accounts visible</span></div><p className="muted small">User list is protected by database policies. Customer passwords are never visible to administrators.</p><div className="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th></tr></thead><tbody>{users.map(u=><tr key={u.id}><td>{u.display_name||"—"}</td><td>{u.email}</td><td>{u.role}</td><td>{new Date(u.created_at).toLocaleDateString()}</td></tr>)}</tbody></table></div></div>}
+    </section>}
+    <footer>© {new Date().getFullYear()} Olamurphy Trade · Educational demo only · Not a broker, exchange, bank or investment adviser.</footer>
+  </main>;
+}
