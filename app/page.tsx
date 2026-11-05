@@ -9,6 +9,7 @@ type Wallet = { balance: number };
 type Activity = { id: number; activity_type: string; asset: string | null; amount: number; created_at: string; note: string | null };
 
 export default function Home() {
+  // Olamurphy Trade demo homepage 
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [balance, setBalance] = useState(10000);
